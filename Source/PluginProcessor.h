@@ -1,12 +1,3 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin processor.
-
-  ==============================================================================
-*/
 
 #pragma once
 
@@ -16,12 +7,12 @@
 //==============================================================================
 /**
 */
-class SliderAttachementSampleAudioProcessor  : public AudioProcessor
+class DemoPluginAudioProcessor  : public AudioProcessor
 {
 public:
     //==============================================================================
-    SliderAttachementSampleAudioProcessor();
-    ~SliderAttachementSampleAudioProcessor();
+    DemoPluginAudioProcessor();
+    ~DemoPluginAudioProcessor();
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -58,5 +49,5 @@ public:
     AudioProcessorValueTreeState parameters;
 private:
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SliderAttachementSampleAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DemoPluginAudioProcessor)
 };

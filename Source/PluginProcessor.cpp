@@ -1,19 +1,10 @@
-/*
-  ==============================================================================
-
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin processor.
-
-  ==============================================================================
-*/
 
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
 
 //==============================================================================
-SliderAttachementSampleAudioProcessor::SliderAttachementSampleAudioProcessor()
+DemoPluginAudioProcessor::DemoPluginAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
      : AudioProcessor (BusesProperties()
                      #if ! JucePlugin_IsMidiEffect
@@ -33,17 +24,17 @@ SliderAttachementSampleAudioProcessor::SliderAttachementSampleAudioProcessor()
     parameters.state.setProperty("version", 0, nullptr);
 }
 
-SliderAttachementSampleAudioProcessor::~SliderAttachementSampleAudioProcessor()
+DemoPluginAudioProcessor::~DemoPluginAudioProcessor()
 {
 }
 
 //==============================================================================
-const String SliderAttachementSampleAudioProcessor::getName() const
+const String DemoPluginAudioProcessor::getName() const
 {
     return JucePlugin_Name;
 }
 
-bool SliderAttachementSampleAudioProcessor::acceptsMidi() const
+bool DemoPluginAudioProcessor::acceptsMidi() const
 {
    #if JucePlugin_WantsMidiInput
     return true;
@@ -52,7 +43,7 @@ bool SliderAttachementSampleAudioProcessor::acceptsMidi() const
    #endif
 }
 
-bool SliderAttachementSampleAudioProcessor::producesMidi() const
+bool DemoPluginAudioProcessor::producesMidi() const
 {
    #if JucePlugin_ProducesMidiOutput
     return true;
@@ -61,7 +52,7 @@ bool SliderAttachementSampleAudioProcessor::producesMidi() const
    #endif
 }
 
-bool SliderAttachementSampleAudioProcessor::isMidiEffect() const
+bool DemoPluginAudioProcessor::isMidiEffect() const
 {
    #if JucePlugin_IsMidiEffect
     return true;
@@ -70,50 +61,50 @@ bool SliderAttachementSampleAudioProcessor::isMidiEffect() const
    #endif
 }
 
-double SliderAttachementSampleAudioProcessor::getTailLengthSeconds() const
+double DemoPluginAudioProcessor::getTailLengthSeconds() const
 {
     return 0.0;
 }
 
-int SliderAttachementSampleAudioProcessor::getNumPrograms()
+int DemoPluginAudioProcessor::getNumPrograms()
 {
     return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
                 // so this should be at least 1, even if you're not really implementing programs.
 }
 
-int SliderAttachementSampleAudioProcessor::getCurrentProgram()
+int DemoPluginAudioProcessor::getCurrentProgram()
 {
     return 0;
 }
 
-void SliderAttachementSampleAudioProcessor::setCurrentProgram (int index)
+void DemoPluginAudioProcessor::setCurrentProgram (int index)
 {
 }
 
-const String SliderAttachementSampleAudioProcessor::getProgramName (int index)
+const String DemoPluginAudioProcessor::getProgramName (int index)
 {
     return {};
 }
 
-void SliderAttachementSampleAudioProcessor::changeProgramName (int index, const String& newName)
+void DemoPluginAudioProcessor::changeProgramName (int index, const String& newName)
 {
 }
 
 //==============================================================================
-void SliderAttachementSampleAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void DemoPluginAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
 }
 
-void SliderAttachementSampleAudioProcessor::releaseResources()
+void DemoPluginAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
-bool SliderAttachementSampleAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+bool DemoPluginAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 {
   #if JucePlugin_IsMidiEffect
     ignoreUnused (layouts);
@@ -136,7 +127,7 @@ bool SliderAttachementSampleAudioProcessor::isBusesLayoutSupported (const BusesL
 }
 #endif
 
-void SliderAttachementSampleAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
+void DemoPluginAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& midiMessages)
 {
     ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
@@ -162,24 +153,24 @@ void SliderAttachementSampleAudioProcessor::processBlock (AudioBuffer<float>& bu
 }
 
 //==============================================================================
-bool SliderAttachementSampleAudioProcessor::hasEditor() const
+bool DemoPluginAudioProcessor::hasEditor() const
 {
     return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* SliderAttachementSampleAudioProcessor::createEditor()
+AudioProcessorEditor* DemoPluginAudioProcessor::createEditor()
 {
-    return new SliderAttachementSampleAudioProcessorEditor (*this);
+    return new DemoPluginAudioProcessorEditor (*this);
 }
 
 //==============================================================================
-void SliderAttachementSampleAudioProcessor::getStateInformation (MemoryBlock& destData)
+void DemoPluginAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
     ScopedPointer<XmlElement> xml(parameters.state.createXml());
     copyXmlToBinary(*xml, destData);
 }
 
-void SliderAttachementSampleAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
+void DemoPluginAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     ScopedPointer<XmlElement> xmlState(getXmlFromBinary(data, sizeInBytes));
 
@@ -194,5 +185,5 @@ void SliderAttachementSampleAudioProcessor::setStateInformation (const void* dat
 // This creates new instances of the plugin..
 AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
-    return new SliderAttachementSampleAudioProcessor();
+    return new DemoPluginAudioProcessor();
 }

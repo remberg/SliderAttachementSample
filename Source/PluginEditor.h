@@ -8,11 +8,11 @@
 //==============================================================================
 /**
 */
-class SliderAttachementSampleAudioProcessorEditor  : public AudioProcessorEditor
+class DemoPluginAudioProcessorEditor  : public AudioProcessorEditor
 {
 public:
-    SliderAttachementSampleAudioProcessorEditor (SliderAttachementSampleAudioProcessor&);
-    ~SliderAttachementSampleAudioProcessorEditor();
+    DemoPluginAudioProcessorEditor (DemoPluginAudioProcessor&);
+    ~DemoPluginAudioProcessorEditor();
   
     //==============================================================================
     typedef AudioProcessorValueTreeState::SliderAttachment SliderAttachment;
@@ -24,7 +24,7 @@ private:
     ScopedPointer<Slider> slider2;
     ScopedPointer<SliderAttachment> attachmentSlider1; 
     ScopedPointer<SliderAttachment> attachmentSlider2;
-    SliderAttachementSampleAudioProcessor& processor;
+    DemoPluginAudioProcessor& processor;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SliderAttachementSampleAudioProcessorEditor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DemoPluginAudioProcessorEditor)
 };

@@ -4,7 +4,7 @@
 
 
 //==============================================================================
-SliderAttachementSampleAudioProcessorEditor::SliderAttachementSampleAudioProcessorEditor (SliderAttachementSampleAudioProcessor& p)
+DemoPluginAudioProcessorEditor::DemoPluginAudioProcessorEditor (DemoPluginAudioProcessor& p)
     : AudioProcessorEditor (&p), processor (p)
 {
     //slider1
@@ -22,18 +22,18 @@ SliderAttachementSampleAudioProcessorEditor::SliderAttachementSampleAudioProcess
     setResizeLimits(600, 300, 900, 450);
 }
 
-SliderAttachementSampleAudioProcessorEditor::~SliderAttachementSampleAudioProcessorEditor()
+DemoPluginAudioProcessorEditor::~DemoPluginAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void SliderAttachementSampleAudioProcessorEditor::paint (Graphics& g)
+void DemoPluginAudioProcessorEditor::paint (Graphics& g)
 {
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
 
 }
 
-void SliderAttachementSampleAudioProcessorEditor::resized()
+void DemoPluginAudioProcessorEditor::resized()
 {
     slider1->setBoundsRelative  (0.25, 0.2, 0.2, 0.4);
     slider2->setBoundsRelative  (0.50, 0.2, 0.2, 0.4);
