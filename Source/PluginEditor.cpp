@@ -10,6 +10,9 @@ SliderAttachementSampleAudioProcessorEditor::SliderAttachementSampleAudioProcess
     //slider1
     addAndMakeVisible(slider1 = new Slider());
     attachmentSlider1 = new SliderAttachment(p.parameters, "YourParameterID", *slider1);
+    
+    addAndMakeVisible(slider2 = new Slider());
+    attachmentSlider2 = new SliderAttachment(p.parameters, "YourParameterID", *slider2);
     setSize (400, 300);
 }
 
@@ -27,4 +30,5 @@ void SliderAttachementSampleAudioProcessorEditor::paint (Graphics& g)
 void SliderAttachementSampleAudioProcessorEditor::resized()
 {
     slider1->setBounds(100, 100, 300, 100);
+    slider2->setBounds(100, 150, 300, 100);
 }
