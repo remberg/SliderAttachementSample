@@ -17,10 +17,10 @@ DemoPluginAudioProcessor::DemoPluginAudioProcessor()
     parameters(*this, nullptr)
 #endif
 {
-    parameters.createAndAddParameter("YourParameterID", "yourparameterID", String(),
+    parameters.createAndAddParameter("yourparameterID", "ParameterName", String(),
         NormalisableRange<float>(0.0f, 1.0f), 0.0f, nullptr, nullptr);
 
-    parameters.state = ValueTree(Identifier("SliderTestProgram"));
+    parameters.state = ValueTree(Identifier("DemoPlugin"));
     parameters.state.setProperty("version", 0, nullptr);
 }
 

@@ -11,13 +11,13 @@ DemoPluginAudioProcessorEditor::DemoPluginAudioProcessorEditor (DemoPluginAudioP
     addAndMakeVisible(slider1 = new Slider());
     slider1->setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
     slider1->setTextBoxStyle(Slider::TextBoxBelow, false, 40, 15);
-    attachmentSlider1 = new SliderAttachment(p.parameters, "YourParameterID", *slider1);
+    attachmentSlider1 = new SliderAttachment(p.parameters, "yourparameterID", *slider1);
     
     //slider2
     addAndMakeVisible(slider2 = new Slider());
     slider2->setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
     slider2->setTextBoxStyle(Slider::TextBoxBelow, false, 40, 15);
-    attachmentSlider2 = new SliderAttachment(p.parameters, "YourParameterID", *slider2);
+    attachmentSlider2 = new SliderAttachment(p.parameters, "yourparameterID", *slider2);
    
     //make the plugin Resizable
     setResizable(true, true);
