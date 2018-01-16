@@ -4,6 +4,9 @@
               jucerVersion="5.2.0" buildVST="0" buildVST3="0" buildAU="0" buildAUv3="0">
   <MAINGROUP id="AcYX0Q" name="SliderAttachementSample">
     <GROUP id="{B7B7BAD4-DEE5-1E3E-76C1-9694065263ED}" name="Source">
+      <FILE id="mHbk2Y" name="otherSliders.cpp" compile="1" resource="0"
+            file="Source/otherSliders.cpp"/>
+      <FILE id="Ge76d2" name="otherSliders.h" compile="0" resource="0" file="Source/otherSliders.h"/>
       <FILE id="s5kJRq" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="e5nRgI" name="PluginProcessor.h" compile="0" resource="0"

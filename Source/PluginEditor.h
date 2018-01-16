@@ -3,7 +3,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
-
+#include "otherSliders.h"
 
 //==============================================================================
 /**
@@ -24,6 +24,9 @@ private:
     ScopedPointer<Slider> slider2;
     ScopedPointer<SliderAttachment> attachmentSlider1; 
     ScopedPointer<SliderAttachment> attachmentSlider2;
+    
+    OtherSliders otherSliders;
+
     DemoPluginAudioProcessor& processor;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DemoPluginAudioProcessorEditor)
