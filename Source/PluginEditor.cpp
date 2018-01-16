@@ -9,11 +9,17 @@ SliderAttachementSampleAudioProcessorEditor::SliderAttachementSampleAudioProcess
 {
     //slider1
     addAndMakeVisible(slider1 = new Slider());
+    slider1->setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
+    slider1->setTextBoxStyle(Slider::TextBoxBelow, false, 40, 15);
     attachmentSlider1 = new SliderAttachment(p.parameters, "YourParameterID", *slider1);
-    
+
     addAndMakeVisible(slider2 = new Slider());
+    slider2->setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
+    slider2->setTextBoxStyle(Slider::TextBoxBelow, false, 40, 15);
     attachmentSlider2 = new SliderAttachment(p.parameters, "YourParameterID", *slider2);
-    setSize (400, 300);
+    setResizable(true, true);
+    getConstrainer()->setFixedAspectRatio(2);
+    setResizeLimits(600, 300, 900, 450);
 }
 
 SliderAttachementSampleAudioProcessorEditor::~SliderAttachementSampleAudioProcessorEditor()
@@ -29,6 +35,6 @@ void SliderAttachementSampleAudioProcessorEditor::paint (Graphics& g)
 
 void SliderAttachementSampleAudioProcessorEditor::resized()
 {
-    slider1->setBounds(100, 100, 300, 100);
-    slider2->setBounds(100, 150, 300, 100);
+    slider1->setBoundsRelative  (0.25, 0.2, 0.2, 0.4);
+    slider2->setBoundsRelative  (0.50, 0.2, 0.2, 0.4);
 }
