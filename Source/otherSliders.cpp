@@ -20,6 +20,7 @@ OtherSliders::~OtherSliders()
 {
 }
 
+
 void OtherSliders::paint (Graphics& g)
 {
     g.fillAll(Colours::black);
