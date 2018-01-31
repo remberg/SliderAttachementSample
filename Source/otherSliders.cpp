@@ -18,6 +18,7 @@ OtherSliders::OtherSliders(DemoPluginAudioProcessor& p) : processor(p)
 
 OtherSliders::~OtherSliders()
 {
+
 }
 
 void OtherSliders::paint (Graphics& g)
